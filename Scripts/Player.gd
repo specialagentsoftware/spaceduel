@@ -10,7 +10,8 @@ var laserlocations := []
 export var health: float = 0
 
 func _ready():
-	pass
+	var pos: Vector2 = Vector2(500,500)
+	self.set_position(pos)
 
 func _process(_delta):
 	pass
