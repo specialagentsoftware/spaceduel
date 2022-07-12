@@ -12,7 +12,7 @@ var friction: float = 0
 var _velocity: Vector2
 
 func _ready():
-	var pos: Vector2 = Vector2(500,500)
+	var pos: Vector2 = Vector2(25,25)
 	self.set_position(pos)
 
 func _process(_delta):
@@ -25,17 +25,3 @@ func _physics_process(delta):
 	var velocity := (Input.get_action_strength("down") - Input.get_action_strength("up")) * transform.y * speed
 	_velocity += (velocity - _velocity) * friction
 	move_and_slide(_velocity)
-
-"""
-func _physics_process(delta):
-	var direction := Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
-	if direction.length() > 1.0:
-		direction = direction.normalized()
-	# Using the follow steering behavior.
-	var target_velocity = direction * speed
-	_velocity += (target_velocity - _velocity) * friction
-	_velocity = move_and_slide(_velocity)
-"""

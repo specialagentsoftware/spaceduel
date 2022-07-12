@@ -16,22 +16,22 @@ rect_pivot_offset = Vector2( -335, -88 )
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 956, 600 )
+position = Vector2( 320, 188 )
 current = true
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 916, 626 )
-scale = Vector2( 158, 100.478 )
+position = Vector2( 324, 186 )
+scale = Vector2( 40.44, 22.68 )
 texture = ExtResource( 1 )
 
 [node name="Stars" type="CPUParticles2D" parent="."]
-position = Vector2( 896, 664 )
-amount = 2000
+position = Vector2( 340, 204 )
+amount = 500
 lifetime = 600.0
 preprocess = 154.13
 speed_scale = 4.7
 emission_shape = 2
-emission_rect_extents = Vector2( 1920, 1080 )
+emission_rect_extents = Vector2( 600, 500 )
 direction = Vector2( 0, 0 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
@@ -43,32 +43,33 @@ color_ramp = SubResource( 1 )
 hue_variation_random = 0.36
 
 [node name="Label" type="Label" parent="."]
-margin_left = 96.0
-margin_top = 119.0
-margin_right = 1819.0
-margin_bottom = 422.0
+margin_left = 52.0
+margin_top = -37.0
+margin_right = 1775.0
+margin_bottom = 266.0
+rect_scale = Vector2( 0.32, 0.72 )
 custom_fonts/font = ExtResource( 2 )
 text = "Spaceduel"
 
 [node name="Start" type="Button" parent="."]
 anchor_right = 0.11
 anchor_bottom = 1.0
-margin_left = 394.0
-margin_top = 695.0
-margin_right = 733.0
-margin_bottom = 805.0
-rect_scale = Vector2( 1, 1.12 )
+margin_left = 99.0
+margin_top = 219.0
+margin_right = 539.6
+margin_bottom = 329.0
+rect_scale = Vector2( 0.4, 0.56 )
 custom_fonts/font = ExtResource( 3 )
 text = "START"
 
 [node name="Quit" type="Button" parent="."]
 anchor_right = 0.11
 anchor_bottom = 1.0
-margin_left = 1013.0
-margin_top = 695.0
-margin_right = 1453.6
-margin_bottom = 805.0
-rect_scale = Vector2( 1, 1.12 )
+margin_left = 354.0
+margin_top = 224.0
+margin_right = 794.6
+margin_bottom = 334.0
+rect_scale = Vector2( 0.4, 0.52 )
 custom_fonts/font = ExtResource( 3 )
 text = "QUIT"
 

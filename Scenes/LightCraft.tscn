@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LightCraft.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Small.png" type="Texture" id=2]
+[ext_resource path="res://yellow grad.tres" type="Gradient" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
 
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0939227, 0.812155 )
+colors = PoolColorArray( 0.382458, 0.86511, 0.915039, 1, 0, 0, 0, 0 )
+
 [node name="LightCraft" type="KinematicBody2D"]
 script = ExtResource( 1 )
-speed = null
-rotatespeed = null
-shieldstrength = null
-laserpower = null
-numberoflasers = null
-health = null
 
 [node name="ShipSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -21,3 +20,35 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
 shape = SubResource( 1 )
+
+[node name="thrustleft" type="CPUParticles2D" parent="."]
+position = Vector2( -6, 15 )
+amount = 11
+angle = -300.0
+angle_random = 0.39
+color_ramp = ExtResource( 3 )
+
+[node name="thrustright" type="CPUParticles2D" parent="."]
+position = Vector2( 5, 15 )
+amount = 11
+angle = -300.0
+angle_random = 0.39
+color_ramp = ExtResource( 3 )
+
+[node name="reverseleft" type="CPUParticles2D" parent="."]
+position = Vector2( -9, -6 )
+rotation = 3.14159
+amount = 11
+spread = 0.0
+angle = -300.0
+angle_random = 0.39
+color_ramp = SubResource( 2 )
+
+[node name="reverseright" type="CPUParticles2D" parent="."]
+position = Vector2( 8, -6 )
+rotation = 3.14159
+amount = 11
+spread = 0.0
+angle = -300.0
+angle_random = 0.39
+color_ramp = SubResource( 2 )
