@@ -1,13 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/LightCraft.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Small.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
 
-[node name="LightCraft" type="Area2D"]
+[node name="LightCraft" type="KinematicBody2D"]
 script = ExtResource( 1 )
+speed = null
+rotatespeed = null
+shieldstrength = null
+laserpower = null
+numberoflasers = null
+health = null
 
 [node name="ShipSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

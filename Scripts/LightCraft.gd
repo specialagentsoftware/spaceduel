@@ -2,8 +2,8 @@ extends Player
 class_name LightCraft
 
 func _ready():
-	speed = 0
-	rotatespeed = 0
+	speed = 400.0
+	rotatespeed = 5.0
 	shieldstrength = 0
 	laserpower = 0
 	numberoflasers = 0
