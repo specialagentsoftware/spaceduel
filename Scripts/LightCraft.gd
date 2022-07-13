@@ -5,6 +5,9 @@ onready var leftthrust := $thrustleft
 onready var rightthrust := $thrustright
 onready var reverseleftthrust := $reverseleft
 onready var reverserightthrust := $reverseright
+onready var sprite := $ShipSprite
+onready var collission := $CollisionShape2D
+onready var timer := $Timer
 
 func _ready():
 	speed = 400.0
@@ -24,16 +27,26 @@ func _physics_process(delta):
 	reverserightthrust.emitting = false
 	
 	if Input.is_action_pressed("special1"):
-		print("Pressed 1")
+		reverseleftthrust.emitting = true
+		reverserightthrust.emitting = true
+		var velocity := (Input.get_action_strength("special1") -0) * transform.y * speed
+		_velocity += (velocity - _velocity) * friction
+		move_and_slide(_velocity)
 		
-	if Input.is_action_pressed("special2"):
-		print("Pressed 2")
+	if Input.is_action_just_pressed("special2"):
+		collission.visible = false
+		sprite.visible = false
+		leftthrust.emitting = false
+		rightthrust.emitting = false
+		reverseleftthrust.emitting = false
+		reverserightthrust.emitting = false
+		timer.start()
 		
+	
 	if Input.is_action_pressed("up"):
 		leftthrust.emitting = true
 		rightthrust.emitting = true
 		
-	if Input.is_action_pressed("down"):
-		reverseleftthrust.emitting = true
-		reverserightthrust.emitting = true
-
+func _on_Timer_timeout():
+		collission.visible = true
+		sprite.visible = true

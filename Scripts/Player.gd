@@ -22,6 +22,6 @@ func _physics_process(delta):
 	var rotate_direction := Input.get_action_strength("rotate_right") - Input.get_action_strength("rotate_left")
 	rotation += rotate_direction * rotatespeed * delta
 		
-	var velocity := (Input.get_action_strength("down") - Input.get_action_strength("up")) * transform.y * speed
+	var velocity := (0 - Input.get_action_strength("up")) * transform.y * speed
 	_velocity += (velocity - _velocity) * friction
 	move_and_slide(_velocity)

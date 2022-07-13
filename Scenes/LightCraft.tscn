@@ -22,7 +22,8 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="thrustleft" type="CPUParticles2D" parent="."]
-position = Vector2( -6, 15 )
+position = Vector2( -5, 16 )
+emitting = false
 amount = 11
 angle = -300.0
 angle_random = 0.39
@@ -30,14 +31,16 @@ color_ramp = ExtResource( 3 )
 
 [node name="thrustright" type="CPUParticles2D" parent="."]
 position = Vector2( 5, 15 )
+emitting = false
 amount = 11
 angle = -300.0
 angle_random = 0.39
 color_ramp = ExtResource( 3 )
 
 [node name="reverseleft" type="CPUParticles2D" parent="."]
-position = Vector2( -9, -6 )
+position = Vector2( -8, -6 )
 rotation = 3.14159
+emitting = false
 amount = 11
 spread = 0.0
 angle = -300.0
@@ -47,8 +50,28 @@ color_ramp = SubResource( 2 )
 [node name="reverseright" type="CPUParticles2D" parent="."]
 position = Vector2( 8, -6 )
 rotation = 3.14159
+emitting = false
 amount = 11
 spread = 0.0
 angle = -300.0
 angle_random = 0.39
 color_ramp = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0, -3 )
+amount = 100
+lifetime = 6.51
+speed_scale = 8.64
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.29
+emission_shape = 1
+emission_sphere_radius = 11.56
+spread = 0.0
+angle = 66.1
+color = Color( 0.411765, 0.847059, 0.164706, 1 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
