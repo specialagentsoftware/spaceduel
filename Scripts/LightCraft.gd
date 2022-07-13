@@ -36,6 +36,7 @@ func _physics_process(delta):
 		move_and_slide(final)
 		
 	if Input.is_action_just_pressed("special2"):
+		speed = 250
 		collission.visible = false
 		leftthrust.emitting = false
 		rightthrust.emitting = false
@@ -55,6 +56,7 @@ func _physics_process(delta):
 		rightthrust.emitting = true
 		
 func _on_Timer_timeout():
+		speed = 400
 		collission.visible = true
 		sprite.modulate.a = 1.0
 		leftthrust.modulate.a = 1

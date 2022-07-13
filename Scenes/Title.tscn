@@ -72,6 +72,5 @@ margin_bottom = 334.0
 rect_scale = Vector2( 0.4, 0.52 )
 custom_fonts/font = ExtResource( 3 )
 text = "QUIT"
-
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
