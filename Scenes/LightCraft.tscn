@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/LightCraft.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Small.png" type="Texture" id=2]
@@ -10,6 +10,10 @@ radius = 16.0
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.0939227, 0.812155 )
 colors = PoolColorArray( 0.382458, 0.86511, 0.915039, 1, 0, 0, 0, 0 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.353591, 0.679558, 0.994475, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.983425, 0.707489, 0.757812, 0.717711, 1, 0.854902, 0.878431, 0.858824, 0.00392157, 1, 1, 1, 0 )
 
 [node name="LightCraft" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -60,18 +64,22 @@ color_ramp = SubResource( 2 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2( 0, -3 )
-amount = 100
-lifetime = 6.51
-speed_scale = 8.64
+[node name="TeleportParticle" type="CPUParticles2D" parent="."]
+position = Vector2( 0, 1 )
+emitting = false
+amount = 1000
+lifetime = 2.0
+speed_scale = 23.9
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.29
 emission_shape = 1
-emission_sphere_radius = 11.56
-spread = 0.0
+emission_sphere_radius = 21.0
+spread = 18.17
+gravity = Vector2( 0, 0 )
+damping = 54.13
 angle = 66.1
-color = Color( 0.411765, 0.847059, 0.164706, 1 )
+color = Color( 1, 1, 1, 0.792157 )
+color_ramp = SubResource( 3 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

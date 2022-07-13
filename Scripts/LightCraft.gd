@@ -8,6 +8,7 @@ onready var reverserightthrust := $reverseright
 onready var sprite := $ShipSprite
 onready var collission := $CollisionShape2D
 onready var timer := $Timer
+onready var teleportparticle := $TeleportParticle
 
 func _ready():
 	speed = 400.0
@@ -29,17 +30,23 @@ func _physics_process(delta):
 	if Input.is_action_pressed("special1"):
 		reverseleftthrust.emitting = true
 		reverserightthrust.emitting = true
-		var velocity := (Input.get_action_strength("special1") -0) * transform.y * speed
+		var velocity := Input.get_action_strength("special1") * transform.y * speed
 		_velocity += (velocity - _velocity) * friction
-		move_and_slide(_velocity)
+		var final = _velocity.normalized()
+		move_and_slide(final)
 		
 	if Input.is_action_just_pressed("special2"):
 		collission.visible = false
-		sprite.visible = false
 		leftthrust.emitting = false
 		rightthrust.emitting = false
 		reverseleftthrust.emitting = false
 		reverserightthrust.emitting = false
+		sprite.modulate.a = 0.4
+		leftthrust.modulate.a = 0.4
+		rightthrust.modulate.a = 0.4
+		reverseleftthrust.modulate.a = 0.4
+		reverserightthrust.modulate.a = 0.4
+		teleportparticle.emitting = true
 		timer.start()
 		
 	
@@ -49,4 +56,9 @@ func _physics_process(delta):
 		
 func _on_Timer_timeout():
 		collission.visible = true
-		sprite.visible = true
+		sprite.modulate.a = 1.0
+		leftthrust.modulate.a = 1
+		rightthrust.modulate.a = 1
+		reverseleftthrust.modulate.a = 1
+		reverserightthrust.modulate.a = 1
+		teleportparticle.emitting = false
