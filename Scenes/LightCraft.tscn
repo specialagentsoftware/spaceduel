@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/LightCraft.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Small.png" type="Texture" id=2]
-[ext_resource path="res://yellow grad.tres" type="Gradient" id=3]
+[ext_resource path="res://Assets/yellow grad.tres" type="Gradient" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
