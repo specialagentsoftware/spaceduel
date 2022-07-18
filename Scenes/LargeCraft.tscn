@@ -10,7 +10,7 @@ radius = 16.0
 offsets = PoolRealArray( 0.0662983, 0.812155 )
 colors = PoolColorArray( 0.915039, 0.666432, 0.382458, 1, 0, 0, 0, 0 )
 
-[node name="LargeCraft" type="KinematicBody2D"]
+[node name="LargeCraft" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
 [node name="ShipSprite" type="Sprite" parent="."]
@@ -41,3 +41,8 @@ scale = Vector2( 2, 2 )
 emitting = false
 amount = 11
 color_ramp = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 10.0

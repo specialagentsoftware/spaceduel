@@ -15,7 +15,7 @@ colors = PoolColorArray( 0.382458, 0.86511, 0.915039, 1, 0, 0, 0, 0 )
 offsets = PoolRealArray( 0.353591, 0.679558, 0.994475, 1 )
 colors = PoolColorArray( 1, 1, 1, 0.983425, 0.707489, 0.757812, 0.717711, 1, 0.854902, 0.878431, 0.858824, 0.00392157, 1, 1, 1, 0 )
 
-[node name="LightCraft" type="KinematicBody2D"]
+[node name="LightCraft" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
 
 [node name="ShipSprite" type="Sprite" parent="."]
@@ -81,5 +81,14 @@ damping = 54.13
 angle = 66.1
 color = Color( 1, 1, 1, 0.792157 )
 color_ramp = SubResource( 3 )
+
+[node name="PlayerCam" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="Map" type="Camera2D" parent="PlayerCam"]
+position = Vector2( 235, 129 )
+zoom = Vector2( 0.25, 0.25 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
