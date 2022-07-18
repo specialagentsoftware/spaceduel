@@ -10,6 +10,7 @@ var laserlocations := []
 var health: float = 0
 var friction: float = 0
 var _velocity: Vector2
+var invulnerable: bool = false
 
 func _ready():
 	var pos: Vector2 = Vector2(25,25)

@@ -26,7 +26,7 @@ position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="thrustleft" type="CPUParticles2D" parent="."]
-position = Vector2( -5, 16 )
+position = Vector2( -5, 15 )
 emitting = false
 amount = 11
 angle = -300.0

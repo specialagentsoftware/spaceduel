@@ -14,6 +14,7 @@ func _ready():
 	numberoflasers = 0
 	laserlocations = []
 	health  = 0
+	invulnerable = false
 
 func _physics_process(delta):
 	
