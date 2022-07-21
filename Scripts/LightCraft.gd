@@ -21,7 +21,7 @@ func _ready():
 	laserpower = 0
 	numberoflasers = 0
 	laserlocations = []
-	health  = 0
+	health = 0
 	invulnerable = false
 
 func _physics_process(delta):
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if isBoosting == false:
 		speed = 325.0
 	else:
-		speed = 1000.0
+		speed = 5000.0
 		
 	if Input.is_action_pressed("special1"):
 		reverseleftthrust.emitting = true
